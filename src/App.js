@@ -27,7 +27,7 @@ useEffect(()=>{
           setEditTodo={setEditTodo}
         ></Form></div>
         <div>
-          <TodoList input={input} todos={todos} setTodos={setTodos} setEditTodo={setEditTodo} />
+          <TodoList input={input} todos={todos} setTodos={setTodos} setEditTodo={setEditTodo} editTodo={editTodo} />
         </div>
       </div>
 

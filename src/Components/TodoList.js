@@ -1,6 +1,6 @@
 import React from "react"
 
-const TodoList = ({ input, todos, setTodos, setEditTodo }) => {
+const TodoList = ({ input, todos, setTodos, setEditTodo, editTodo }) => {
     const handleDelete = ({ id }) => {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
