@@ -1,6 +1,6 @@
 import React from "react"
 
-const TodoList = ({ todos, setTodos, setEditTodo }) => {
+const TodoList = ({ input, todos, setTodos, setEditTodo }) => {
     const handleDelete = ({ id }) => {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
@@ -16,8 +16,8 @@ const TodoList = ({ todos, setTodos, setEditTodo }) => {
         )
     };
 
-    const handleEdit = ({id}) => {
-        const findTodo= todos.find((todo)=>id===todo.id);
+    const handleEdit = ({ id }) => {
+        const findTodo = todos.find((todo) => id === todo.id);
         setEditTodo(findTodo);
     };
 
@@ -27,7 +27,7 @@ const TodoList = ({ todos, setTodos, setEditTodo }) => {
                 todos.map((todo) => (
                     <li className="list-item" key={todo.id}>
                         <input
-                            type="text" value={todo.title} className={`list ${todo.completed?"complete":""}`} onChange={(e) => e.preventDefault()}
+                            type="text" value={(editTodo && todo.id === editTodo.id) ? input : todo.title} className={`list ${todo.completed ? "complete" : ""}`} onChange={(e) => e.preventDefault()}
                         />
                         <div>
                             <button className="button-complete task-button" onClick={() => handleComplete(todo)}>
